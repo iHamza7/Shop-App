@@ -10,7 +10,7 @@ class Product {
     required this.id,
     required this.description,
     required this.imageUrl,
-    required this.isFavorite,
+    this.isFavorite = false,
     required this.price,
     required this.title,
   });
