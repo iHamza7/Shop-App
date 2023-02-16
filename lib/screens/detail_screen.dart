@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 
 class ProductDetail extends StatelessWidget {
-  const ProductDetail({super.key});
+  final String title;
+  const ProductDetail(this.title, {super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+      ),
+    );
   }
 }
