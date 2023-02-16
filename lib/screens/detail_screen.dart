@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 class ProductDetail extends StatelessWidget {
-  final String title;
-  const ProductDetail(this.title, {super.key});
+  const ProductDetail({super.key});
+  static const routeName = '/product-detail';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: const Text("title"),
       ),
     );
   }
