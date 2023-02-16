@@ -27,9 +27,11 @@ class ProductItem extends StatelessWidget {
             color: Theme.of(context).primaryColor,
           ),
         ),
-        child: Image.network(
-          imageUrl,
-          fit: BoxFit.cover,
+        child: GestureDetector(
+          child: Image.network(
+            imageUrl,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );
