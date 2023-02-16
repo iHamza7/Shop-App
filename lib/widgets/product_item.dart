@@ -22,7 +22,7 @@ class ProductItem extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           trailing: IconButton(
-            icon: const Icon(Icons.shopping_cart_checkout),
+            icon: const Icon(Icons.shopping_cart),
             onPressed: () {},
             color: Theme.of(context).primaryColor,
           ),
