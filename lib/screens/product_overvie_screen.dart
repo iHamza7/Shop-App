@@ -11,18 +11,34 @@ enum FilterOptions {
   All,
 }
 
-class ProductOverviewScreen extends StatelessWidget {
+class ProductOverviewScreen extends StatefulWidget {
   const ProductOverviewScreen({super.key});
+
+  @override
+  State<ProductOverviewScreen> createState() => _ProductOverviewScreenState();
+}
+
+class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
+  var _showFavoriteOnly = false;
   @override
   Widget build(BuildContext context) {
     final productsData = Provider.of<Products>(context);
-    final products = productsData.items;
+    final products =
+        _showFavoriteOnly ? productsData.favoriteItems : productsData.items;
     return Scaffold(
       appBar: AppBar(
         title: const Text('MyShop'),
         actions: [
           PopupMenuButton(
-            onSelected: (FilterOptions selectedValue) {},
+            onSelected: (FilterOptions selectedValue) {
+              setState(() {
+                if (selectedValue == FilterOptions.Favorite) {
+                  _showFavoriteOnly = true;
+                } else {
+                  _showFavoriteOnly = false;
+                }
+              });
+            },
             itemBuilder: (_) => [
               const PopupMenuItem(
                 value: FilterOptions.Favorite,
