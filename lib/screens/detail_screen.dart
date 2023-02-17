@@ -10,13 +10,11 @@ class ProductDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final productID = ModalRoute.of(context)!.settings.arguments as String;
-    Provider.of<Products>(context)
-        .items
-        .firstWhere((prod) => prod.id == productID);
+    final loadedProduct = Provider.of<Products>(context).findById(productID);
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("title"),
+        title: Text(loadedProduct.title),
       ),
     );
   }
