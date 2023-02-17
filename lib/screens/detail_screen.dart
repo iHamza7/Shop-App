@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/products_provider.dart';
 
 class ProductDetail extends StatelessWidget {
   const ProductDetail({super.key});
@@ -7,6 +10,7 @@ class ProductDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final productID = ModalRoute.of(context)!.settings.arguments as String;
+    Provider.of<Products>(context);
 
     return Scaffold(
       appBar: AppBar(
