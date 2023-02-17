@@ -1,8 +1,15 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 import '../providers/products_provider.dart';
 import '../widgets/product_item.dart';
+
+enum FilterOptions {
+  Favorite,
+  All,
+}
 
 class ProductOverviewScreen extends StatelessWidget {
   const ProductOverviewScreen({super.key});
@@ -13,6 +20,26 @@ class ProductOverviewScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('MyShop'),
+        actions: [
+          PopupMenuButton(
+            onSelected: (FilterOptions selectedValue) {},
+            itemBuilder: (_) => [
+              const PopupMenuItem(
+                value: FilterOptions.Favorite,
+                child: Text(
+                  'Only Favorites',
+                ),
+              ),
+              const PopupMenuItem(
+                value: FilterOptions.All,
+                child: Text(
+                  'Show All',
+                ),
+              ),
+            ],
+            icon: const Icon(Icons.more_vert),
+          )
+        ],
       ),
       body: GridView.builder(
         padding: const EdgeInsets.all(16),
