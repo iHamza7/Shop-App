@@ -21,10 +21,9 @@ class ProductOverviewScreen extends StatelessWidget {
             childAspectRatio: 3 / 2,
             crossAxisSpacing: 10,
             mainAxisSpacing: 20),
-        itemBuilder: (context, index) => ProductItem(
-          products[index].id,
-          products[index].title,
-          products[index].imageUrl,
+        itemBuilder: (context, index) => ChangeNotifierProvider(
+          create: (context) => products[index],
+          child: const ProductItem(),
         ),
         itemCount: products.length,
       ),
