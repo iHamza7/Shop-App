@@ -3,7 +3,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
+import '../providers/cart.dart';
 import '../providers/products_provider.dart';
+import '../widgets/badges.dart';
 import '../widgets/product_item.dart';
 
 enum FilterOptions {
@@ -25,6 +27,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
     final productsData = Provider.of<Products>(context);
     final products =
         _showFavoriteOnly ? productsData.favoriteItems : productsData.items;
+    final cart = Provider.of<Cart>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('MyShop'),
@@ -54,6 +57,16 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
               ),
             ],
             icon: const Icon(Icons.more_vert),
+          ),
+          Badges(
+            value: cart.itemCount.toString(),
+            color: Colors.deepOrange,
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.shopping_cart,
+              ),
+            ),
           ),
         ],
       ),
