@@ -54,7 +54,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
               ),
             ],
             icon: const Icon(Icons.more_vert),
-          )
+          ),
         ],
       ),
       body: GridView.builder(
