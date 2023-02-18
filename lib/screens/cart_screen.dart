@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../providers/cart.dart';
 
 class CartScreen extends StatelessWidget {
+  static const routeName = '/cart-screen';
   const CartScreen({super.key});
 
   @override
@@ -30,6 +31,7 @@ class CartScreen extends StatelessWidget {
                   ),
                   Chip(
                     label: Text('\$${totalCart.totalAmount}'),
+                    backgroundColor: Theme.of(context).primaryColor,
                   ),
                 ],
               ),
