@@ -15,15 +15,14 @@ class CartItem {
 }
 
 class Cart with ChangeNotifier {
-  late Map<String, CartItem> _items;
+  Map<String, CartItem> _items = {};
 
   Map<String, CartItem> get items {
     return {..._items};
   }
 
   int get itemCount {
-    // ignore: unnecessary_null_comparison
-    return _items == null ? 0 : _items.length;
+    return _items.length;
   }
 
   void addItem(String productId, double price, String title) {
@@ -38,13 +37,15 @@ class Cart with ChangeNotifier {
               ));
     } else {
       _items.putIfAbsent(
-          productId,
-          () => CartItem(
-                id: DateTime.now().toString(),
-                title: title,
-                price: price,
-                quantity: 1,
-              ));
+        productId,
+        () => CartItem(
+          id: DateTime.now().toString(),
+          title: title,
+          price: price,
+          quantity: 1,
+        ),
+      );
     }
+    notifyListeners();
   }
 }
