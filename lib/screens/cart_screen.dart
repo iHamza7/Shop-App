@@ -35,10 +35,14 @@ class CartScreen extends StatelessWidget {
                   ),
                   MaterialButton(
                     onPressed: () {
-                      Provider.of<Orders>(context).addOrders(
+                      Provider.of<Orders>(
+                        context,
+                        listen: false,
+                      ).addOrders(
                         totalCart.items.values.toList(),
                         totalCart.totalAmount,
                       );
+                      totalCart.clear();
                     },
                     textColor: Theme.of(context).primaryColor,
                     child: const Text(
