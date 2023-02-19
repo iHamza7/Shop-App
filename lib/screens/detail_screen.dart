@@ -31,10 +31,14 @@ class ProductDetail extends StatelessWidget {
               '\$${loadedProduct.price}',
               style: const TextStyle(color: Colors.grey, fontSize: 20),
             ),
-            Text(
-              loadedProduct.description,
-              textAlign: TextAlign.center,
-              softWrap: true,
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Text(
+                loadedProduct.description,
+                textAlign: TextAlign.center,
+                softWrap: true,
+              ),
             )
           ],
         ),
