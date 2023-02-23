@@ -54,7 +54,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
               const PopupMenuItem(
                 value: FilterOptions.All,
                 child: Text(
-                  'Show All in',
+                  'Show All',
                 ),
               ),
             ],
