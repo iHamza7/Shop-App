@@ -48,7 +48,7 @@ class _ProductOverviewScreenState extends State<ProductOverviewScreen> {
               const PopupMenuItem(
                 value: FilterOptions.Favorite,
                 child: Text(
-                  'Only Favorties',
+                  'Only Favortes',
                 ),
               ),
               const PopupMenuItem(
