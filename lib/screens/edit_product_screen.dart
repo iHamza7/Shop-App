@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class EditProductScreen extends StatefulWidget {
+  static const routeName = '/edit-product-screen';
   const EditProductScreen({super.key});
 
   @override
