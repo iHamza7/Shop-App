@@ -16,11 +16,17 @@ class UserPorductItem extends StatelessWidget {
         children: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.edit),
+            icon: Icon(
+              Icons.edit,
+              color: Theme.of(context).primaryColor,
+            ),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.delete),
+            icon: Icon(
+              Icons.delete,
+              color: Theme.of(context).errorColor,
+            ),
           ),
         ],
       ),
