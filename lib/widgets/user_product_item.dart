@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../screens/edit_product_screen.dart';
-
 class UserPorductItem extends StatelessWidget {
   final String title;
   final String imageUrl;
@@ -20,7 +18,7 @@ class UserPorductItem extends StatelessWidget {
           children: [
             IconButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(EditProductScreen.routeName);
+                //
               },
               icon: Icon(
                 Icons.edit,
