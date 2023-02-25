@@ -70,6 +70,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                       ? const Text('Enter Url')
                       : FittedBox(
                           child: Image.network(_imageUrlController.text),
+                          fit: BoxFit.cover,
                         ),
                 ),
                 TextFormField(
