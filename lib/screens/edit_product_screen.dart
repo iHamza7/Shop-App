@@ -58,6 +58,13 @@ class _EditProductScreenState extends State<EditProductScreen> {
                   width: 100,
                   height: 100,
                   padding: const EdgeInsets.only(top: 8, right: 10),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      width: 1,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  child: Container(),
                 ),
                 TextFormField(),
               ],
