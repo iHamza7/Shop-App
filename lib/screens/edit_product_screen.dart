@@ -48,6 +48,10 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
   void _saveForm() {
     _form.currentState?.save();
+    print(_editedProduct.title);
+    print(_editedProduct.description);
+    print(_editedProduct.price);
+    print(_editedProduct.imageUrl);
   }
 
   @override
