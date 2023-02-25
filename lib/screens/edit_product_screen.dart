@@ -11,12 +11,14 @@ class EditProductScreen extends StatefulWidget {
 class _EditProductScreenState extends State<EditProductScreen> {
   final _priceFocusNode = FocusNode();
   final _descriptionNode = FocusNode();
+  final _imageUrlController = TextEditingController();
 
   @override
   void dispose() {
     super.dispose();
     _priceFocusNode.dispose();
     _descriptionNode.dispose();
+    _imageUrlController.dispose();
   }
 
   @override
@@ -64,12 +66,17 @@ class _EditProductScreenState extends State<EditProductScreen> {
                       color: Colors.grey,
                     ),
                   ),
-                  child: Container(),
+                  child: _imageUrlController.text.isEmpty
+                      ? const Text('Enter Url')
+                      : FittedBox(
+                          child: Image.network(_imageUrlController.text),
+                        ),
                 ),
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Enter Url'),
                   keyboardType: TextInputType.url,
                   textInputAction: TextInputAction.done,
+                  controller: _imageUrlController,
                 ),
               ],
             )
