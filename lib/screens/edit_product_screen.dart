@@ -30,7 +30,11 @@ class _EditProductScreenState extends State<EditProductScreen> {
     _imageUrlController.dispose();
   }
 
-  void _updateImageUrl() {}
+  void _updateImageUrl() {
+    if (!_imageUrlFocus.hasFocus) {
+      setState(() {});
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
