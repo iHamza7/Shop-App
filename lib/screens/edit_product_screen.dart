@@ -20,7 +20,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
     id: '',
     title: '',
     description: '',
-    price: 0,
+    price: 0.0,
     imageUrl: '',
   );
 
@@ -47,7 +47,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
   }
 
   void _saveForm() {
-    _form.currentState!.save();
+    _form.currentState?.save();
   }
 
   @override
@@ -80,7 +80,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                       description: _editedProduct.description,
                       imageUrl: _editedProduct.imageUrl,
                       price: _editedProduct.price,
-                      title: titlevalue,
+                      title: titlevalue.toString(),
                     );
                   },
                 ),
@@ -92,12 +92,30 @@ class _EditProductScreenState extends State<EditProductScreen> {
                   onFieldSubmitted: (_) {
                     FocusScope.of(context).requestFocus(_descriptionNode);
                   },
+                  onSaved: (value) {
+                    _editedProduct = Product(
+                      id: '',
+                      description: _editedProduct.description,
+                      imageUrl: _editedProduct.imageUrl,
+                      price: double.parse(value!),
+                      title: _editedProduct.title,
+                    );
+                  },
                 ),
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Description'),
                   maxLines: 3,
                   keyboardType: TextInputType.multiline,
                   focusNode: _descriptionNode,
+                  onSaved: (value) {
+                    _editedProduct = Product(
+                      id: '',
+                      description: value.toString(),
+                      imageUrl: _editedProduct.imageUrl,
+                      price: _editedProduct.price,
+                      title: _editedProduct.title,
+                    );
+                  },
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -132,6 +150,15 @@ class _EditProductScreenState extends State<EditProductScreen> {
                         focusNode: _imageUrlFocus,
                         onFieldSubmitted: (_) {
                           _saveForm();
+                        },
+                        onSaved: (value) {
+                          _editedProduct = Product(
+                            id: '',
+                            description: _editedProduct.description,
+                            imageUrl: value.toString(),
+                            price: _editedProduct.price,
+                            title: _editedProduct.title,
+                          );
                         },
                       ),
                     ),
