@@ -83,9 +83,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                       title: titlevalue.toString(),
                     );
                   },
-                  validator: (value) {
-                    //
-                  },
+                  validator: (value) {},
                 ),
                 TextFormField(
                   decoration: const InputDecoration(labelText: 'Price'),
