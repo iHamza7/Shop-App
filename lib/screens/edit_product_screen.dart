@@ -48,10 +48,6 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
   void _saveForm() {
     _form.currentState?.save();
-    print(_editedProduct.title);
-    print(_editedProduct.description);
-    print(_editedProduct.price);
-    print(_editedProduct.imageUrl);
   }
 
   @override
@@ -86,6 +82,9 @@ class _EditProductScreenState extends State<EditProductScreen> {
                       price: _editedProduct.price,
                       title: titlevalue.toString(),
                     );
+                  },
+                  validator: (value) {
+                    //
                   },
                 ),
                 TextFormField(
