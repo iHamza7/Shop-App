@@ -70,7 +70,10 @@ class _EditProductScreenState extends State<EditProductScreen> {
             child: ListView(
               children: [
                 TextFormField(
-                  decoration: const InputDecoration(labelText: 'Title please'),
+                  decoration: const InputDecoration(
+                    labelText: 'Title please',
+                    hintText: 'title',
+                  ),
                   textInputAction: TextInputAction.next,
                   onFieldSubmitted: (_) {
                     FocusScope.of(context).requestFocus(_priceFocusNode);
