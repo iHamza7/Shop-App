@@ -117,7 +117,9 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 ),
                 TextFormField(
                   decoration: const InputDecoration(
-                      labelText: 'Description', hintText: 'describe'),
+                    labelText: 'Description',
+                    hintText: 'describe',
+                  ),
                   maxLines: 3,
                   keyboardType: TextInputType.multiline,
                   focusNode: _descriptionNode,
@@ -153,8 +155,10 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     ),
                     Expanded(
                       child: TextFormField(
-                        decoration:
-                            const InputDecoration(labelText: 'Enter Url'),
+                        decoration: const InputDecoration(
+                          labelText: 'Enter Url',
+                          hintText: 'URL',
+                        ),
                         keyboardType: TextInputType.url,
                         textInputAction: TextInputAction.done,
                         controller: _imageUrlController,
