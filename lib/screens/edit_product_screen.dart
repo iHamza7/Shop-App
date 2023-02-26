@@ -48,6 +48,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
   void _saveForm() {
     _form.currentState?.save();
+    _form.currentState?.validate();
   }
 
   @override
@@ -74,6 +75,12 @@ class _EditProductScreenState extends State<EditProductScreen> {
                   onFieldSubmitted: (_) {
                     FocusScope.of(context).requestFocus(_priceFocusNode);
                   },
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please provide a value';
+                    }
+                    return null;
+                  },
                   onSaved: (titlevalue) {
                     _editedProduct = Product(
                       id: '',
@@ -82,12 +89,6 @@ class _EditProductScreenState extends State<EditProductScreen> {
                       price: _editedProduct.price,
                       title: titlevalue.toString(),
                     );
-                  },
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Please provide a value';
-                    }
-                    return null;
                   },
                 ),
                 TextFormField(
