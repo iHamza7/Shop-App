@@ -96,7 +96,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 ),
                 TextFormField(
                   decoration: const InputDecoration(
-                    labelText: 'Price',
+                    labelText: 'Price please',
                     hintText: '0.00',
                   ),
                   textInputAction: TextInputAction.next,
