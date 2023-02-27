@@ -71,7 +71,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
               children: [
                 TextFormField(
                   decoration: const InputDecoration(
-                    labelText: 'Title please',
+                    labelText: 'Title',
                     hintText: 'title ',
                   ),
                   textInputAction: TextInputAction.next,
