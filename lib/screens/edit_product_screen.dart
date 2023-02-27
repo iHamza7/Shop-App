@@ -72,7 +72,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 TextFormField(
                   decoration: const InputDecoration(
                     labelText: 'Title please',
-                    hintText: 'title',
+                    hintText: 'title please',
                   ),
                   textInputAction: TextInputAction.next,
                   onFieldSubmitted: (_) {
