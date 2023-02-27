@@ -117,7 +117,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                 ),
                 TextFormField(
                   decoration: const InputDecoration(
-                    labelText: 'Description here',
+                    labelText: 'Description ',
                     hintText: 'describe',
                   ),
                   maxLines: 3,
