@@ -109,8 +109,11 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     if (value!.isEmpty) {
                       return 'Please provide a value';
                     }
-                    if (double.parse(value) == null) {
+                    if (double.tryParse(value) == null) {
                       return 'enter the value';
+                    }
+                    if (double.parse(value) <= 0) {
+                      return 'please enter value greater then zero';
                     }
                     return null;
                   },
