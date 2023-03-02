@@ -109,6 +109,9 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     if (value!.isEmpty) {
                       return 'Please provide a value';
                     }
+                    if (double.parse(value) == null) {
+                      return 'enter the value';
+                    }
                     return null;
                   },
                   onSaved: (value) {
