@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../providers/product.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/products_provider.dart';
 
 class EditProductScreen extends StatefulWidget {
   static const routeName = '/edit-product-screen';
@@ -53,6 +56,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<Products>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit Products'),
