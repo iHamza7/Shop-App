@@ -52,11 +52,11 @@ class _EditProductScreenState extends State<EditProductScreen> {
   void _saveForm() {
     _form.currentState?.save();
     _form.currentState?.validate();
+    Provider.of<Products>(context);
   }
 
   @override
   Widget build(BuildContext context) {
-    Provider.of<Products>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Edit Products'),
