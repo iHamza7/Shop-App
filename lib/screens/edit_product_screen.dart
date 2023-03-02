@@ -186,7 +186,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                         },
                         validator: (value) {
                           if (value!.isEmpty) {
-                            return 'please enter the value';
+                            return 'please enter the url';
                           }
                           return null;
                         },
