@@ -52,7 +52,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
   void _saveForm() {
     _form.currentState?.save();
     _form.currentState?.validate();
-    Provider.of<Products>(context);
+    Provider.of<Products>(context, listen: false).addProduct(_editedProduct);
   }
 
   @override
