@@ -184,6 +184,12 @@ class _EditProductScreenState extends State<EditProductScreen> {
                         onFieldSubmitted: (_) {
                           _saveForm();
                         },
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return 'please enter the value';
+                          }
+                          return null;
+                        },
                         onSaved: (value) {
                           _editedProduct = Product(
                             id: '',
