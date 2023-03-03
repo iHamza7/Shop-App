@@ -70,7 +70,8 @@ class Products with ChangeNotifier {
     );
     _items.add(newProduct);
     // _items.insert(0, newProduct);
-
     notifyListeners();
   }
+
+  void updateProduct() {}
 }
