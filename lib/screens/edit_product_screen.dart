@@ -27,6 +27,12 @@ class _EditProductScreenState extends State<EditProductScreen> {
     imageUrl: '',
   );
   var _isInit = true;
+  final _initValues = {
+    'title': '',
+    'description': '',
+    'price': '',
+    'imageUrl': '',
+  };
 
   @override
   void initState() {
