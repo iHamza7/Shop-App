@@ -99,6 +99,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
             child: ListView(
               children: [
                 TextFormField(
+                  initialValue: _initValues['title'],
                   decoration: const InputDecoration(
                     labelText: 'Title',
                     hintText: 'title ',
@@ -124,6 +125,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                   },
                 ),
                 TextFormField(
+                  initialValue: _initValues['price'],
                   decoration: const InputDecoration(
                     labelText: 'Price',
                     hintText: '0.00',
@@ -157,6 +159,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                   },
                 ),
                 TextFormField(
+                  initialValue: _initValues['description'],
                   decoration: const InputDecoration(
                     labelText: 'Description ',
                     hintText: 'describe',
@@ -205,6 +208,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     ),
                     Expanded(
                       child: TextFormField(
+                        initialValue: _initValues['imageUrl'],
                         decoration: const InputDecoration(
                           labelText: 'Enter Url',
                           hintText: 'URL',
