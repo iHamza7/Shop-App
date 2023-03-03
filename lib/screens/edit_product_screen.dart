@@ -26,7 +26,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
     price: 0.0,
     imageUrl: '',
   );
-  var isInit = true;
+  var _isInit = true;
 
   @override
   void initState() {
@@ -37,6 +37,10 @@ class _EditProductScreenState extends State<EditProductScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
+    if (_isInit) {
+      final productID = ModalRoute.of(context)!.settings.arguments as String;
+    }
+    _isInit = false;
   }
 
   @override
