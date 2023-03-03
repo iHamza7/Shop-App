@@ -51,8 +51,11 @@ class _EditProductScreenState extends State<EditProductScreen> {
         'title': _editedProduct.title,
         'description': _editedProduct.description,
         'price': _editedProduct.price.toString(),
-        'imageUrl': _editedProduct.imageUrl,
+
+        // 'imageUrl': _editedProduct.imageUrl,
+        'imageUrl': '',
       };
+      _imageUrlController.text = _editedProduct.imageUrl;
     }
     _isInit = false;
   }
@@ -208,7 +211,6 @@ class _EditProductScreenState extends State<EditProductScreen> {
                     ),
                     Expanded(
                       child: TextFormField(
-                        initialValue: _initValues['imageUrl'],
                         decoration: const InputDecoration(
                           labelText: 'Enter Url',
                           hintText: 'URL',
