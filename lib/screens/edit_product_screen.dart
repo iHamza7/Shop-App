@@ -27,7 +27,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
     imageUrl: '',
   );
   var _isInit = true;
-  final _initValues = {
+  var _initValues = {
     'title': '',
     'description': '',
     'price': '',
@@ -47,6 +47,12 @@ class _EditProductScreenState extends State<EditProductScreen> {
       final productID = ModalRoute.of(context)!.settings.arguments as String;
       _editedProduct =
           Provider.of<Products>(context, listen: false).findById(productID);
+      _initValues = {
+        'title': _editedProduct.title,
+        'description': _editedProduct.description,
+        'price': _editedProduct.price.toString(),
+        'imageUrl': _editedProduct.imageUrl,
+      };
     }
     _isInit = false;
   }
