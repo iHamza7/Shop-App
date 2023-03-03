@@ -85,7 +85,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                   },
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Please provide a value';
+                      return 'Please provide ';
                     }
                     return null;
                   },
