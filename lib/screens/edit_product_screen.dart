@@ -79,8 +79,10 @@ class _EditProductScreenState extends State<EditProductScreen> {
   void _saveForm() {
     _form.currentState?.save();
     _form.currentState?.validate();
+    // ignore: unnecessary_null_comparison
     if (_editedProduct.id != null) {
-      //
+      Provider.of<Products>(context, listen: false)
+          .updateProduct(_editedProduct.id, _editedProduct);
     } else {
       Provider.of<Products>(context, listen: false).addProduct(_editedProduct);
     }
@@ -123,7 +125,8 @@ class _EditProductScreenState extends State<EditProductScreen> {
                   },
                   onSaved: (titlevalue) {
                     _editedProduct = Product(
-                      id: '',
+                      id: _editedProduct.id,
+                      isFavorite: _editedProduct.isFavorite,
                       description: _editedProduct.description,
                       imageUrl: _editedProduct.imageUrl,
                       price: _editedProduct.price,
@@ -157,7 +160,8 @@ class _EditProductScreenState extends State<EditProductScreen> {
                   },
                   onSaved: (value) {
                     _editedProduct = Product(
-                      id: '',
+                      id: _editedProduct.id,
+                      isFavorite: _editedProduct.isFavorite,
                       description: _editedProduct.description,
                       imageUrl: _editedProduct.imageUrl,
                       price: double.parse(value!),
@@ -185,7 +189,8 @@ class _EditProductScreenState extends State<EditProductScreen> {
                   },
                   onSaved: (value) {
                     _editedProduct = Product(
-                      id: '',
+                      id: _editedProduct.description,
+                      isFavorite: _editedProduct.isFavorite,
                       description: value.toString(),
                       imageUrl: _editedProduct.imageUrl,
                       price: _editedProduct.price,
@@ -237,7 +242,8 @@ class _EditProductScreenState extends State<EditProductScreen> {
                         },
                         onSaved: (value) {
                           _editedProduct = Product(
-                            id: '',
+                            id: _editedProduct.id,
+                            isFavorite: _editedProduct.isFavorite,
                             description: _editedProduct.description,
                             imageUrl: value.toString(),
                             price: _editedProduct.price,
