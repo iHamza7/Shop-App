@@ -26,11 +26,17 @@ class _EditProductScreenState extends State<EditProductScreen> {
     price: 0.0,
     imageUrl: '',
   );
+  var isInit = true;
 
   @override
   void initState() {
     super.initState();
     _imageUrlFocus.addListener(_updateImageUrl);
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
   }
 
   @override
