@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 import 'product.dart';
 
@@ -61,6 +62,9 @@ class Products with ChangeNotifier {
   }
 
   void addProduct(Product product) {
+    final url = Uri.parse(
+        'https://shopapp-4f872-default-rtdb.firebaseio.com/products.json');
+    http.post(url, body: product);
     final newProduct = Product(
       title: product.title,
       description: product.description,
@@ -79,7 +83,7 @@ class Products with ChangeNotifier {
       _items[prodIndex] = newProduct;
       notifyListeners();
     } else {
-      print('...');
+      debugPrint('...');
     }
   }
 }
